@@ -18,26 +18,4 @@ export class PalmeritaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-  getUnits(): number {
-    return !!this.product ? this.shoppingCartService.getUnitsOfProduct(this.product) : 1
-  }
-
-  getPrice(): string {
-    return (!!this.product && !Number.isNaN(this.product?.price)) ?
-      this.priceService.getPrice(this.product.price) :
-      "-";
-  }
-
-  addToShoppingCart() {
-    this.shoppingCartService.addProduct(this.product);
-    this.units = this.shoppingCartService.getUnitsOfProduct(this.product);
-
-  }
-
-  deleteFromShoppingCart() {
-    this.shoppingCartService.deleteProduct(this.product);
-    this.units = this.shoppingCartService.getUnitsOfProduct(this.product);
-  }
-
 }
